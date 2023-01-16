@@ -58,13 +58,14 @@
            // data : p,
             dataType:"json" // 서버에서 다시 여기로 테이터 받는 타입이 json이라는 것.
 
-        }).done(function (resp){
+        }).done(function (brian){
             //var content=JSON.stringify(json,null," ");
             <!-- $("<pre class=\"content\">").html(content).appendTo("body"); -->
-            console.log("resp>>>>", resp);
-            if(resp) alert('SUCCESS!!');
+            console.log("brian>>>>", brian);
+            if(brian) alert('SUCCESS!!');
 
-            var test=json.test; //31'15
+            //31'15
+            var test=json.test;
             test.forEach(function (t){
                 appendTest(t.id, t.name, t.icode);
             })
@@ -106,7 +107,7 @@
 </head>
 <body>
    <div class="container">
-        <h1>Test Board</h1>
+        <h1>I'm Board</h1>
 
        <div class="list-group">
            <button type="button" class="list-group-item list-group-item-action ptr">
