@@ -1,0 +1,52 @@
+
+# ?? ?? application.properties? ???? .yml? ??? 230115
+# ????????? servlet.xml?? ??? ???? ?? .yml <=json??? ??
+# application.properties? server.servelet.encoding.charset:utf-8?? .??? ???? ?? ????. 6?
+
+server:
+  port: 8080
+  servlet:
+    ## ?  context-path: /? ??? 47?, 01'25?? ???.
+    context-path:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    ##thymeleaf:
+    ## prefix:
+    ## suffix: .html
+    ## check-template-location: true
+    ##cache: false
+    ## enabled: false
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+    username: cos
+    password: 1234
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+
