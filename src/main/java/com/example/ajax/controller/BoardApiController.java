@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+// @RestController는 return에 있는 값을 그냥 그대로 전달해주는 것.
 public class BoardApiController {
 
     @PostMapping("board/getBoardContent")
