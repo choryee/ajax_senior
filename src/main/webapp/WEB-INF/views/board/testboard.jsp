@@ -42,26 +42,27 @@
         })
     });
 
-    var URL="http://localhost:8080/board/getBoardContent4";
+    var URL="http://localhost:8080/board/getBoardContent";
     function setList(){
         <!-- 밑 javascript 형태 오브젝트-->
       var p={cmd:"test-by-icode", icode: "2"};
         // var p={icode: 2};
 
         $.ajax({
-            type:"GET",
+            type:"POST",
             url:URL,
             //data:p,  //이렇게 하면, 서버로 날라가는 게, 그냥 key=value형태.
-           // data:  JSON.stringify(p), // 이렇게 하면, 서버로 날라가는게 json타입. 이거 쓸거면, 밑거와 세트로 써야.
-          //  contentType:"application/json; charset=UTF-8",
+           data:  JSON.stringify(p), // 이렇게 하면, 서버로 날라가는게 json타입. 이거 쓸거면, 밑거와 세트로 써야.
+           contentType:"application/json; charset=UTF-8",
            // contentType:"application/json",
-            data : p,
+           // data : p,
             dataType:"json" // 서버에서 다시 여기로 테이터 받는 타입이 json이라는 것.
 
         }).done(function (resp){
             //var content=JSON.stringify(json,null," ");
             <!-- $("<pre class=\"content\">").html(content).appendTo("body"); -->
             console.log("resp>>>>", resp);
+            if(resp) alert('SUCCESS!!');
 
             var test=json.test; //31'15
             test.forEach(function (t){
