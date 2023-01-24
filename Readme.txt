@@ -10,6 +10,9 @@ seniorcoding의 게시판 버튼 누르면, 새로운 버튼이 만들어지면�
 접속
 http://localhost:8080/getBoardList
 
+testboard.jsp
+-Bootstrap 강의부분. JQuery 2_2, 09'53
+
 intellij 스프링부트 maven 프로젝트 생성
 https://imksh.com/98
 

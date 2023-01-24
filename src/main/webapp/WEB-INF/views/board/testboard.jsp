@@ -78,7 +78,7 @@
     }
 
 
-    // textarea에 내용창 2개의 내용을 리스트에 붙이기.
+    // textarea 2개의 내용을 ajax로 save 컨트롤러 호출(저장) 하는 것.
     function addTest(){
         var $name=$('#name'); // jquery는 찾는데 시간 많이 걸리므로, 여러번 쓰는 것은 변수로 빼라
         var username=$name.val();
@@ -192,13 +192,13 @@
         })
     }
 
- // 태그 요소를 만들기.
+ // 태그 요소를 만들고, 리스트에 붙이기.
     function appendTest(id, name, icode){
         var btn=$('<button>');
         btn.attr('id', id); //6강 43;21 삭제 부분에서
         btn.addClass('list-group-item').addClass('list-group-item-action');
         btn.text(name);
-        btn.appendTo($("div.list-group"));
+        btn.appendTo($("div.list-group")); //div안 써도 됨.
 
         var a=$("<a>");
         a.addClass("btn").addClass("btn-danger");
@@ -233,7 +233,7 @@
 
        <div class="list-group">
      <!-- <button type="button" class="list-group-item list-group-item-action ptr">
-               The current button
+                     The current button
                <a href="#" class="btn btn-danger">x</a>
                <span  class="badge bg-primary badge-pill">14</span>
            </button>
@@ -242,12 +242,12 @@
 
        <div class="my-3">
                <form class="form-inline">
-                   <div class="form-group mx-sm-3 mb-2">
-                       <input type="text" class="form-control" id="name" placeholder="don't forget your name">
-                       <input type="text" class="form-control" id="icode" value="3" placeholder="don't forget your icode">
-                   </div>
-                       <button type="submit" id="btn-add" class="btn2 btn-primary mb-2">+</button>
-    <!-- 위 버튼이 form안에 있으므로, 기본이 submit이다. <div><c:out value="${boardContent.cmd}"></c:out></div> -->
+                       <div class="form-group mx-sm-3 mb-2">
+                           <input type="text" class="form-control" id="name" placeholder="don't forget your name">
+                           <input type="text" class="form-control" id="icode" value="3" placeholder="don't forget your icode">
+                       </div>
+                   <button type="submit" id="btn-add" class="btn2 btn-primary mb-2">+</button>
+<!-- 위 버튼이 form안에 있으므로, 기본이 submit이다. <div><c:out value="${boardContent.cmd}"></c:out></div> -->
                </form>
        </div>
    </div>
