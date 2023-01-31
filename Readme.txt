@@ -1,11 +1,11 @@
 2023.01.16
 https://www.youtube.com/watch?v=w2ULuAO7NUY&list=PLEOnZ6GeucBWCR_eYjmKuFykGAQylAl9M&index=7
-웹개발 05 - 속성 jQuery 한방에 정리하기 (2/2)
+웹개발 05 - 속성 jQuery 한방에 정리하기 (2/2) 시니어코딩에서
 seniorcoding의 게시판 버튼 누르면, 새로운 버튼이 만들어지면서 하는 것.
 
 환경
 -스프링부트, JPA,  maven, java 17 SDK, tomcat 10
-- spring framework+mybatis로 이거 만들려고 하다, 계속 몇주간 오류나서 이건 포기함.
+- spring framework+mybatis로 이거 만들려고 하다, 계속 몇주간 오류나서 mybatis이건 포기함. instead, I used JPA.
 
 접속
 http://localhost:8080/getBoardList

@@ -192,7 +192,7 @@
         })
     }
 
- // 태그 요소를 만들고, 리스트에 붙이기.
+ // 태그 요소를 단순히 만들고, 리스트에 단순히 붙이기.(서버와 통신 x)
     function appendTest(id, name, icode){
         var btn=$('<button>');
         btn.attr('id', id); //6강 43;21 삭제 부분에서
