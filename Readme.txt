@@ -5,7 +5,7 @@ seniorcoding의 게시판 버튼 누르면, 새로운 버튼이 만들어지면�
 
 환경
 -스프링부트, JPA,  maven, java 17 SDK, tomcat 10
-- spring framework+mybatis로 이거 만들려고 하다, 계속 몇주간 오류나서 mybatis이건 포기함. instead, I used JPA.
+- spring framework+mybatis로 이거 만들려고 하다, 계속 1월 몇주간 오류나서 mybatis이건 포기함. instead, I used JPA.
 
 접속
 http://localhost:8080/getBoardList
@@ -36,5 +36,5 @@ DB에 테이블 생성될때 그 '테이블명'은 model/User33처럼 그 클래
 
 30'53 브라우저의 콘솔창에서 코드로 작업하는 거 보여줌.
 55'16- refactoring강의, 공통된 ajax부분 refactoring 함.
-01;09'52 - 막 새글 올린 것은 삭제버튼 작용 안 해서, 최종 수정함.
+01;09'52 - 막 새글 올린 것은 삭제버튼 작용 안 해서, 그게 되게 최종 수정함.
 01;10'15 - 전부 정리 해줌
