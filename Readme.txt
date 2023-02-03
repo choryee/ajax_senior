@@ -3,9 +3,15 @@ https://www.youtube.com/watch?v=w2ULuAO7NUY&list=PLEOnZ6GeucBWCR_eYjmKuFykGAQylA
 웹개발 05 - 속성 jQuery 한방에 정리하기 (2/2) 시니어코딩에서
 seniorcoding의 게시판 버튼 누르면, 새로운 버튼이 만들어지면서 하는 것.
 
+왼쪽에 ajax_senior.jpg로 프로젝트 사진 있음.
+
 환경
 -스프링부트, JPA,  maven, java 17 SDK, tomcat 10
+-intellij에서 스프링부트 maven 프로젝트 생성 https://imksh.com/98
+위 사이트 보고 시작함. 즉, intellij에서 빈 프로젝트에서 위 블로그보면서, 추가하면서 만든 것.
+
 - spring framework+mybatis로 이거 만들려고 하다, 계속 1월 몇주간 오류나서 mybatis이건 포기함. instead, I used JPA.
+- 타임리프을 쓸거면, 미리 생성시 넣어줘라
 
 접속
 http://localhost:8080/getBoardList
@@ -16,7 +22,7 @@ testboard.jsp
 intellij 스프링부트 maven 프로젝트 생성
 https://imksh.com/98
 
-- 타임리프을 쓸거면, 미리 생성시 넣어줘라
+
 
 
 userrepository,controller등 인식못할때. AjaxApplication.java
