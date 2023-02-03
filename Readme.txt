@@ -5,16 +5,26 @@ seniorcoding의 게시판 버튼 누르면, 새로운 버튼이 만들어지면�
 
 왼쪽에 ajax_senior.jpg로 프로젝트 사진 있음.
 
-환경
+환경-------------------------------------------------------
 -스프링부트, JPA,  maven, java 17 SDK, tomcat 10
 -intellij에서 스프링부트 maven 프로젝트 생성 https://imksh.com/98
-위 사이트 보고 시작함. 즉, intellij에서 빈 프로젝트에서 위 블로그보면서, 추가하면서 만든 것.
+위 사이트 보고 시작함. 즉, intellij에서 빈 프로젝트에서 위 블로그보면서, 빈것에서 추가하면서 만든 것.
 
 - spring framework+mybatis로 이거 만들려고 하다, 계속 1월 몇주간 오류나서 mybatis이건 포기함. instead, I used JPA.
 - 타임리프을 쓸거면, 미리 생성시 넣어줘라
+------------------------------------------------------------
+DB명(blog) 확인 (application.yml보라)
+blog/user33
+cos/1234
+
+----------------
+화면구조는 밑에
+----------------
 
 접속
+메이븐 없이 접속, 왼족 AjaxApplication열고 그 안에 삼각형 누르면, 서버 돔.
 http://localhost:8080/getBoardList
+http://localhost:8080/testboard
 
 testboard.jsp
 -Bootstrap 강의부분. JQuery 2_2, 09'53
@@ -44,3 +54,39 @@ DB에 테이블 생성될때 그 '테이블명'은 model/User33처럼 그 클래
 55'16- refactoring강의, 공통된 ajax부분 refactoring 함.
 01;09'52 - 막 새글 올린 것은 삭제버튼 작용 안 해서, 그게 되게 최종 수정함.
 01;10'15 - 전부 정리 해줌
+
+-------------
+ajax_senior 화면 구조----
+
+$(document).ready(function(){
+  setList();
+
+  $('#btn-add').on('click', function(e){
+
+	 addServerTest();
+  })
+}
+
+
+ function delTest(id){ }
+
+
+ function addServerTest(){
+
+ //ajax 성공시
+ appendTest();
+ }
+
+
+ function setList(){
+
+ //ajax 성공시
+  appendTest();
+  }
+
+
+ function appendTest(id, name, icode){}
+
+
+ ajax쓰기
+ $.ajax({}).done(function(sekyung){}).fail(function(xhr, status, errorThrown){}).always(function(xhr, status){})

@@ -14,7 +14,7 @@ public class BoardWebController {
 
     @RequestMapping("/getBoardList")
     public String boardList(){
-    return "board/testboard_test11";
+    return "board/testboard22";
     // return "<h1> hello Brian you're phenomenon!!</h1>";
  }
 }

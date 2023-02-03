@@ -30,13 +30,13 @@
 
     $(document).ready(function (){
         // 첨 페이지 ready할 때 바로, setList();호출함.
-        setList();
+             setList();
 
         $("#btn-add").on("click", function (evt){
           //  console.log("evt>>>>>>>>", evt);
           //  console.log("currentTarget>>>>>>>>", evt.currentTarget);
             evt.preventDefault();
-            addTest();
+            addServerTest();
         })
 
         // console.log("--------------------------Del event starting")
@@ -46,7 +46,9 @@
         //     evt.preventDefault();
         //     delTest();
         // })
-    });
+
+    }); //--$(document).ready(function ()
+
 
     function delTest(id){
         var URL="http://localhost:8080/board/delete/";
@@ -54,7 +56,7 @@
             type:"delete",
             url: URL+id,
 
-            // delete는 data는 넘기는 게 아니므로, 밑 필요 x
+            // delete는 데이터를 넘기는 게 아니므로, 밑 필요 x
             // data:  JSON.stringify(p),
             // contentType:"application/json; charset=UTF-8",
             // dataType:"json" // 서버에서 다시 여기로 테이터 받는 타입이 json이라는 것.
@@ -75,11 +77,11 @@
         }).always(function (xhr, status){
             //   console.log("console::The request is complete!!>>>", URL+"?"+$.param(p));
         })
-    }
+    } //--delTest()
 
 
-    // textarea 2개의 내용을 ajax로 save 컨트롤러 호출(저장) 하는 것.
-    function addTest(){
+// textarea 2개의 내용을 ajax로 save컨트롤러 호출(저장) 하는 것.
+    function addServerTest(){
         var $name=$('#name'); // jquery는 찾는데 시간 많이 걸리므로, 여러번 쓰는 것은 변수로 빼라
         var username=$name.val();
 
@@ -108,6 +110,7 @@
                 dataType:"json" // 서버에서 다시 여기로 테이터 받는 타입이 json이라는 것.
 
             }).done(function (brian){
+                console.log('brain=======>', brian)
                 appendTest(brian.id, name, password);
                 console.log('brian.id>>>', brian.id);
                 //var content=JSON.stringify(json,null," ");
@@ -125,7 +128,7 @@
             }).always(function (xhr, status){
              //   console.log("console::The request is complete!!>>>", URL+"?"+$.param(p));
             })
-        }
+        }//-- addServerTest()
 
 
 // 화면에 전체 리스트 뿌리기. setList()
@@ -134,13 +137,14 @@
     function setList(){
         console.log("-------------------------setList start 화면에 전체 리스트 뿌리기 시작 ")
         <!-- 밑 javascript 형태 오브젝트-->
+  // @@@@@@@@@@@@@@ 밑이 왜 이렇게 해야 하는지 모르겠음. 230203
       var p={username:"test-by-kim", password: "27896"};
         // var p={icode: 2};
 
         $.ajax({
             type:"post",
             url:URL,
-            //data:p,  //이렇게 하면, 서버로 날라가는 게, 그냥 key=value형태.
+            //data:p,  //data:p 이렇게 하면, 서버로 날라가는 게, 그냥 key=value형태.
            data:  JSON.stringify(p), // 이렇게 하면, 서버로 날라가는게 json타입. 이거 쓸거면, 밑거와 세트로 써야.
            contentType:"application/json; charset=UTF-8",
            // contentType:"application/json",
@@ -190,15 +194,16 @@
         }).always(function (xhr, status){
             console.log("console::The request is complete!!>>>", URL+"?"+$.param(p));
         })
-    }
+    } //--setList()
+
 
  // 태그 요소를 단순히 만들고, 리스트에 단순히 붙이기.(서버와 통신 x, 0203)
     function appendTest(id, name, icode){
         var btn=$('<button>');
-        btn.attr('id', id); //6강 43;21 삭제 부분에서
+        btn.attr('id', id); //6강 43;21 삭제 부분에서 //id
         btn.addClass('list-group-item').addClass('list-group-item-action');
-        btn.text(name);
-        btn.appendTo($("div.list-group")); //div안 써도 됨.
+        btn.text(name); //name
+        btn.appendTo($("div.list-group")); //div를 안 써도 됨.
 
         var a=$("<a>");
         a.addClass("btn").addClass("btn-danger");
@@ -207,7 +212,8 @@
         a.attr('data-id', id);
         a.appendTo(btn);
 
-      //  console.log("--------------------------Del event는 여기에 등록해야")
+        //  console.log("--------------------------Del event는 여기에 등록해야")
+        // 이 부분이 강의 마지막. 금방 새로 붙인 것은 삭제버튼으로 삭제 안 됐는데, 삭제 되게, 삭제하는 함수 위치를 바꾼 것.0203
         a.on("click", function (evt){
             console.log("evt>>>>>>>>", evt);
             // target-내가 클릭한 개체.
@@ -216,20 +222,22 @@
             var $btnDel=$(evt.target);
             console.log(">>>>>$btnDel & data-id>", $btnDel, $btnDel.attr('data-id'));
             console.log(">>>>>$btnDel & data-id>", $btnDel, $btnDel.data('id')); //data라는 것을 많이 써서, 위와 동일. 51'37
-            delTest( $btnDel.data('id') );
+            delTest( $btnDel.data('id') ); //delTest 함수 호출.
         })
 
         var span=$("<span>");
         span.addClass("badge").addClass("bg-primary").addClass("badge-pill");
-        span.text(icode);
+        span.text(icode); //icode
         span.appendTo(btn);
-    }
+
+    } // --appendTest
+
 
     </script>
 </head>
 <body>
 <div class="container">
-<h1>I'm Board(<small class="text-muted" id="cnt"></small> )</h1>
+<h1>Berlin(<small class="text-muted" id="cnt"></small> )</h1>
 
        <div class="list-group">
      <!-- <button type="button" class="list-group-item list-group-item-action ptr">

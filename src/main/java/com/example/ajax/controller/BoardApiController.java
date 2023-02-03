@@ -47,9 +47,12 @@ public class BoardApiController {
     }
 
     @PostMapping("board/save")
-    public User33 save(@RequestBody User33 user33){
+    public User33 save(@RequestBody User33 user33){ //addServerTest()의 Json형태 데이터를 @RequestBody달면
+    // http의 body에 데이터를 싣고 보낸 것을 받는 것.
         System.out.println("User33========>>"+user33.getPassword());
-        // 포스트맨으로 하니, 밑의 객체를  return이 json로 함.
+        // 포스트맨으로 하니, 밑의 객체User33(id=15, username=takga, password=99999)를  return이 json로 함.
+        User33 user331= userRepository.save(user33);
+        System.out.println("userRepository.save(user33)====>"+user331);
         return userRepository.save(user33);
     }
 
