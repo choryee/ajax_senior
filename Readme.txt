@@ -31,6 +31,7 @@ testboard.jsp
 
 intellij 스프링부트 maven 프로젝트 생성
 https://imksh.com/98
+https://leeys.tistory.com/12
 
 
 
