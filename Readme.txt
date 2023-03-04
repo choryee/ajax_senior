@@ -3,8 +3,13 @@ https://www.youtube.com/watch?v=w2ULuAO7NUY&list=PLEOnZ6GeucBWCR_eYjmKuFykGAQylA
 웹개발 05 - 속성 jQuery 한방에 정리하기 (2/2) 시니어코딩에서
 seniorcoding의 게시판 버튼 누르면, 새로운 버튼이 만들어지면서 하는 것.
 
-환경
--스프링부트, JPA,  maven, java 17 SDK, tomcat 10
+========환경
+-스프링부트,
+JPA,
+maven,
+mysql,
+ java 17 SDK,
+ tomcat 10
 - spring framework+mybatis로 이거 만들려고 하다, 계속 몇주간 오류나서 mybatis이건 포기함. instead, I used JPA.
 
 접속
@@ -13,8 +18,11 @@ http://localhost:8080/getBoardList
 testboard.jsp
 -Bootstrap 강의부분. JQuery 2_2, 09'53
 
-intellij 스프링부트 maven 프로젝트 생성
+intellij 스프링부트 gradle 프로젝트 생성
 https://imksh.com/98
+
+새로운 스프링부트 프로젝트 생성
+ : https://leeys.tistory.com/12
 
 - 타임리프을 쓸거면, 미리 생성시 넣어줘라
 
@@ -38,3 +46,40 @@ DB에 테이블 생성될때 그 '테이블명'은 model/User33처럼 그 클래
 55'16- refactoring강의, 공통된 ajax부분 refactoring 함.
 01;09'52 - 막 새글 올린 것은 삭제버튼 작용 안 해서, 최종 수정함.
 01;10'15 - 전부 정리 해줌
+
+--------------------------구조 ------------------------
+   <script>
+        var ICODE=2;
+
+    $(document).ready(function (){
+        $('#btn-add').on('click', function (e){
+            e.preventDefault();
+            appendTest(345,'aaa',12);
+        })
+    })
+
+
+    function delTest(id){
+
+    }
+
+
+    // textarea 2개의 내용을 ajax로 save 컨트롤러 호출(저장) 하는 것.
+    function addTest(){
+
+        }
+
+
+// 화면에 전체 리스트 뿌리기. setList()
+    var URL="http://localhost:8080/board/getList";
+
+    function setList(){
+
+    }
+
+ // 태그 요소를 만들고, 리스트에 붙이기.
+    function appendTest(id, name, icode){
+
+            }
+
+    </script>

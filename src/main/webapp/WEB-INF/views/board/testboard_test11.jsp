@@ -98,6 +98,7 @@
             <span class="badge bg-secondary">New</span>
         </button>
     </div>
+
        <div>
           <form class="form-inline">
            <div class="form-group mb-2">
